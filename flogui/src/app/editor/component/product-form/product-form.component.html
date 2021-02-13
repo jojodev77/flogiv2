@@ -1,0 +1,161 @@
+<form [formGroup]="productForm" fxLayout="column">
+
+    <section fxLayout="column" fxLayoutAlign="space-around center">
+        <p>Nombre de produits: {{numberOfProducts}}</p>
+    </section>
+
+    <section fxLayout="row" fxLayoutAlign="space-around center" class="action">
+
+        <button (click)="createFormProduct()">AJOUTER UN PRODUIT</button>
+
+        <section fxLayout="column">
+            <span>MISE A JOURS / SUPPRESSION</span>
+            <mat-form-field appearance="fill">
+                <mat-label>Sélection du produit</mat-label>
+                <mat-select name="food">
+                    <mat-option [value]="prod" *ngFor="let prod of products" (click)="updateOrDelete(prod)">
+                        {{prod.id}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </section>
+
+
+    </section>
+
+
+    <section fxLayout="row" fxLayoutAlign="space-around center" >
+        <mat-form-field appearance="fill">
+            <mat-label *ngIf="!productForm.get('type').value">Type</mat-label>
+            <mat-label *ngIf="productForm.get('type').value">{{productForm.get('type').value}}</mat-label>
+            <mat-select name="food" formControlName="type"  [placeholder]="productForm.get('type').value">
+                <mat-option [value]="'dd'?type.viewValue: 'dd'" *ngFor="let type of Type">
+                    {{type.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" fxLayoutAlign="space-around center" >
+            <mat-label *ngIf="!productForm.get('forme').value">Forme</mat-label>
+            <mat-label *ngIf="productForm.get('forme').value">{{productForm.get('forme').value}}</mat-label>
+            <mat-select name="food" formControlName="forme" [placeholder]="productForm.get('forme').value">
+                <mat-option [value]="productForm.get('forme').value?forme.viewValue: productForm.get('forme').value" *ngFor="let forme of Forme" >
+                    {{forme.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </section>
+
+    <section fxLayout="row" fxLayoutAlign="space-around center" >
+        <mat-form-field appearance="fill">
+            <mat-label *ngIf="!productForm.get('materiaux').value">Material 1</mat-label>
+            <mat-label *ngIf="productForm.get('materiaux').value">{{productForm.get('materiaux').value}}</mat-label>
+            <mat-select name="food" formControlName="materiaux"
+                [placeholder]="productForm.get('materiaux').value">
+                <mat-option [value]="materiaux.viewValue" *ngFor="let materiaux of Materiaux">
+                    {{materiaux.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label *ngIf="!productForm.get('materiauxdeux').value">Material 2</mat-label>
+            <mat-label *ngIf="productForm.get('materiauxdeux').value">{{productForm.get('materiauxdeux').value}}</mat-label>
+            <mat-select name="food" formControlName="materiauxdeux" 
+                [placeholder]="productForm.get('materiauxdeux').value">
+                <mat-option [value]="materiaux.viewValue" *ngFor="let materiaux of Materiaux">
+                    {{materiaux.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label *ngIf="!productForm.get('materiauxtrois').value">Material 3</mat-label>
+            <mat-label *ngIf="productForm.get('materiauxtrois').value">{{productForm.get('materiauxtrois').value}}</mat-label>
+            <mat-select name="food" formControlName="materiauxtrois" 
+                [placeholder]="productForm.get('materiauxtrois').value">
+                <mat-option [value]="materiaux.viewValue" *ngFor="let materiaux of Materiaux">
+                    {{materiaux.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </section>
+
+    <section fxLayout="row" fxLayoutAlign="space-around center" >
+        <mat-form-field appearance="fill">
+            <mat-label *ngIf="!productForm.get('couleur').value">Couleur 1</mat-label>
+            <mat-label *ngIf="productForm.get('couleur').value">{{productForm.get('couleur').value}}</mat-label>
+            <mat-select name="food" formControlName="couleur" 
+                [placeholder]="productForm.get('couleur').value">
+                <mat-option [value]="couleur.viewValue" *ngFor="let couleur of Couleur">
+                    {{couleur.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label *ngIf="!productForm.get('couleurdeux').value">Couleur 2</mat-label>
+            <mat-label *ngIf="productForm.get('couleurdeux').value">{{productForm.get('couleurdeux').value}}</mat-label>
+            <mat-select name="food" formControlName="couleurdeux" 
+                [placeholder]="productForm.get('couleurdeux').value">
+                <mat-option [value]="couleur.viewValue" *ngFor="let couleur of Couleur">
+                    {{couleur.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label *ngIf="!productForm.get('couleurtrois').value">Couleur 3</mat-label>
+            <mat-label *ngIf="productForm.get('couleurtrois').value">{{productForm.get('couleurtrois').value}}</mat-label>
+            <mat-select name="food" formControlName="couleurtrois" 
+                [placeholder]="productForm.get('couleurtrois').value">
+                <mat-option [value]="couleur.viewValue" *ngFor="let couleur of Couleur">
+                    {{couleur.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </section>
+
+
+    <section fxLayout="row" fxLayoutAlign="space-around center" >
+        <mat-form-field class="example-form-field">
+            <mat-label>Prix</mat-label>
+            <input matInput type="number" min="0" formControlName="prix">
+            <button mat-button *ngIf="productForm.get('prix').value" matSuffix mat-icon-button aria-label="Clear"
+                (click)="productForm.get('prix').setValue('')">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <mat-form-field class="example-form-field">
+            <mat-label>Image</mat-label>
+            <input matInput type="text" formControlName="image">
+            <button mat-button *ngIf="productForm.get('image').value" matSuffix mat-icon-button aria-label="Clear"
+                (click)="productForm.get('image').setValue('')">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <mat-form-field class="example-form-field">
+            <mat-label>Informations</mat-label>
+            <input matInput type="text" formControlName="information">
+            <button mat-button *ngIf="productForm.get('information').value" matSuffix mat-icon-button aria-label="Clear"
+                (click)="productForm.get('information').setValue('')">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+
+    </section>
+
+    <section fxLayout="row" fxLayoutAlign="center center" >
+        <button *ngIf="stateOfForm === 'create'">AJOUT</button>
+        <button *ngIf="stateOfForm === 'update'">MISE A JOUR</button>
+        <button *ngIf="stateOfForm === 'update'">SUPPRIMER</button>
+    </section>
+
+
+
+
+</form>

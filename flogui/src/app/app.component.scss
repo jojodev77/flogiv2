@@ -1,0 +1,54 @@
+.mat-toolbar.mat-primary {
+    background-color: aquamarine;
+    color: black !important;
+    min-height: 120px !important;
+}
+
+mat-sidenav-content{
+  background-color: lemonchiffon;
+  }
+
+  mat-sidenav-container{
+    background-color: lemonchiffon !important;
+  }
+
+ p{
+    margin-top: 54px !important;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+  .title{
+      font-weight: bolder;
+      color: yellow;
+      font-size: 20px;
+      padding: 10px;
+  }
+
+  .imgFleur{
+    max-width: 80px;
+    margin-top: 29px;
+    height: 80px;
+  }
+
+  .bordureTitle{
+    border: 3px solid greenyellow;
+    background: linear-gradient(0.25turn, #85C1E9, #AF7AC5, #F9E79F);
+    box-shadow: 7px 6px 15px greenyellow;
+  }
+
+  span{
+      padding: 30px;
+      margin-top: 10px;
+      font-weight: bolder;
+      letter-spacing: 0.1em;
+  }
+
+  span:hover{
+      color: red;
+      cursor: pointer;
+  }
+
+  span:active{
+      text-decoration: underline blue;
+  }

@@ -1,0 +1,46 @@
+<mat-card class="panier">
+
+    <h1> VOTRE PANIER</h1>
+    <section >
+        <ul *ngFor="let product of products">
+            <li> <img src="{{product?.image}}"> : {{product?.prix}}€ <mat-icon (click)="deleteProduct(product)">delete_forever</mat-icon></li>
+
+        </ul>
+        <!-- <table *ngFor="let product of products">
+            <tr>
+               
+            </tr>
+            <tr>
+                <td><img src="{{product?.image}}"></td>
+                <td>{{product?.prix}} €</td>
+            </tr>
+
+        </table> -->
+    </section>
+
+    <section fxLayout="column" fxLayoutAlign="center center" class="price">
+
+        <section fxLayout="row">
+            <span> Prix TTC: {{totalPrice}} €</span>
+        </section>
+        <section fxLayout="row">
+            <span> Frais de port: {{pricePost}} €</span>
+        </section>
+        <section fxLayout="row">
+            <span>Prix à régler: {{priceToPayed}} €</span>
+
+
+        </section>
+        <section>
+            <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+
+            <div>
+                <span>PAYPAL, 100% SECURISE</span>
+                <div id="paypal-checkout-btn"></div>
+                <span>CONTACTER FLOGUI / PAYER PAR CHEQUE / VIREMENT BANCAIRE </span>
+                <span><a HREF="mailto:flogui.boutique@orange.fr ?subject=Notre affaire
+        &body=Bonjour">flogui.boutique@orange.fr</a></span>
+            </div>
+        </section>
+    </section>
+</mat-card>

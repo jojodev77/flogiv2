@@ -1,0 +1,33 @@
+.panier{
+    background: linear-gradient(0.25turn, #85C1E9, #AF7AC5, #F9E79F);
+    box-shadow: 7px 6px 15px greenyellow;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-block ;
+    }
+
+li{
+    display: inline-block ;
+    list-style: none;
+}
+
+table{
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.table{
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+img{
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.price{
+  
+}

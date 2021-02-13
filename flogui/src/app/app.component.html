@@ -1,0 +1,50 @@
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>list</mat-icon>
+      </button>
+      <!-- <img src="assets/logo.PNG" class="logo" (click)="scrollTo('.accueil')" fxShow="true"  > -->
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <section>
+          <section class="bordureTitle mat-elevation-z8" fxLayout="row">
+            <p >
+              VENTE DE BIJOUX FANTAISIE ET BIEN ETRE
+            </p>
+            <a [routerLink]="['/editor']"><img src="assets/fleur.jpg" class="imgFleur"></a>
+          </section>
+          <span><a [routerLink]="['/']">BOUTIQUE</a></span>
+          <span><a [routerLink]="['/cgv']">PRESENTATION</a></span>
+          <span><a [routerLink]="['/mentions']">MENTIONS LEGALES</a></span>
+        </section>
+      </div>
+
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <section class="bordureTitle mat-elevation-z8" fxLayout="row">
+        <p >
+          VENTE DE BIJOUX FANTAISIE ET BIEN ETRE
+        </p>
+        </section>
+      <mat-nav-list fxLayout="column">
+        <section fxLayout="column">
+          <span><a [routerLink]="['/']">BOUTIQUE</a></span>
+          <span><a [routerLink]="['/cgv']">PRESENTATION</a></span>
+          <span><a [routerLink]="['/mentions']">MENTIONS LEGALES</a></span>
+        </section>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Fermer</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+
+
