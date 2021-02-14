@@ -156,7 +156,7 @@ export class ProductFormService {
         'Content-Type': 'application/json'
       })
     };
-    return this.httpClient.post(`${this.url}/ajout`, { data: data }, {headers: optionRequete.headers})
+    return this.httpClient.post<Products[]>(`${this.url.productUrl}/ajout`, data, {headers: optionRequete.headers})
       .pipe(map((res) => {
         this.product.push(res['data']);
         return this.product;

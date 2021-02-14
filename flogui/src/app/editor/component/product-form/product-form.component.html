@@ -39,7 +39,7 @@
             <mat-label *ngIf="!productForm.get('forme').value">Forme</mat-label>
             <mat-label *ngIf="productForm.get('forme').value">{{productForm.get('forme').value}}</mat-label>
             <mat-select name="food" formControlName="forme" [placeholder]="productForm.get('forme').value">
-                <mat-option [value]="productForm.get('forme').value?forme.viewValue: productForm.get('forme').value" *ngFor="let forme of Forme" >
+                <mat-option [value]="forme.value" *ngFor="let forme of Forme" >
                     {{forme.viewValue}}
                 </mat-option>
             </mat-select>
@@ -150,8 +150,8 @@
     </section>
 
     <section fxLayout="row" fxLayoutAlign="center center" >
-        <button *ngIf="stateOfForm === 'create'">AJOUT</button>
-        <button *ngIf="stateOfForm === 'update'">MISE A JOUR</button>
+        <button *ngIf="stateOfForm === 'create'" (click)="createProduct()">AJOUT</button>
+        <button *ngIf="stateOfForm === 'update'" (click)="updateProduct()">MISE A JOUR</button>
         <button *ngIf="stateOfForm === 'update'">SUPPRIMER</button>
     </section>
 

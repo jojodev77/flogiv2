@@ -3,7 +3,7 @@
     <h1> VOTRE PANIER</h1>
     <section >
         <ul *ngFor="let product of products">
-            <li> <img src="{{product?.image}}"> : {{product?.prix}}€ <mat-icon (click)="deleteProduct(product)">delete_forever</mat-icon></li>
+            <li class="mat-elevation-z8"> <img src="{{product?.image}}"> : {{product?.prix}}€ <mat-icon (click)="deleteProduct(product)">delete_forever</mat-icon></li>
 
         </ul>
         <!-- <table *ngFor="let product of products">
