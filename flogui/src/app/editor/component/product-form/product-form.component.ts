@@ -18,6 +18,7 @@ export class ProductFormComponent implements OnInit {
   products: Products[] = [];
   stateOfForm: string = 'create';
   numberOfProducts: number;
+  productId: any;
   Type = [
     { value: 1, viewValue: 'bagues' },
     { value: 2, viewValue: 'pendentifs' },
@@ -202,6 +203,7 @@ export class ProductFormComponent implements OnInit {
 
   updateOrDelete(product: Products) {
     this.stateOfForm = 'update';
+    this.productId = product.id;
     this.productForm.get('type').setValue(product.type),
       this.productForm.get('forme').setValue(product.forme),
       this.productForm.get('materiaux').setValue(product.materiaux),

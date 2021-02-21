@@ -1,12 +1,12 @@
 .products{
-    background: linear-gradient(0.25turn, #85C1E9, #AF7AC5, #F9E79F);
+    background-color: #FFD700;
     box-shadow: 7px 6px 15px greenyellow;
     min-height: 100%;
 }
 
 table {
     width: 100%;
-    background: linear-gradient(0.25turn, #85C1E9, #AF7AC5, #F9E79F);
+  background-color: #FFD700;
     box-shadow: 7px 6px 15px greenyellow;
     min-height: 100%;
   }
@@ -33,7 +33,7 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 button{
     border-radius: 10px;
-    background-color: aquamarine;
+    background-color: darkturquoise;
     text-align: center;
     max-width: 100px;
     cursor: pointer;
@@ -54,7 +54,7 @@ button{
 
 .price{
     padding: 5px; 
-    color: aquamarine;
+    color: darkturquoise;
     font-weight: bold;
     font-size: 32px;
 }

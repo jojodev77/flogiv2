@@ -152,7 +152,7 @@
     <section fxLayout="row" fxLayoutAlign="center center" >
         <button *ngIf="stateOfForm === 'create'" (click)="createProduct()">AJOUT</button>
         <button *ngIf="stateOfForm === 'update'" (click)="updateProduct()">MISE A JOUR</button>
-        <button *ngIf="stateOfForm === 'update'">SUPPRIMER</button>
+        <button *ngIf="stateOfForm === 'update'" (click)="deleteProduct(productId)">SUPPRIMER</button>
     </section>
 
 

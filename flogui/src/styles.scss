@@ -2,12 +2,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: linear-gradient(0.25turn, #85C1E9, #AF7AC5, #F9E79F);}
+  background-color: #FFD700;}
 
 
     button{
         border-radius: 10px;
-        background-color: aquamarine;
+        background-color: darkturquoise;
         text-align: center;
         max-width: 100px;
         cursor: pointer;
@@ -26,5 +26,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
     }
 
     th, td, p, h2, h1, span{
-        font-family: arial;
+        font-family: 'lato';
     }
+html, body { height: 100%; }
+body { margin: 0; font-family: arial;  border: 5px solid;}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    border: 5px solid;
+    white-space: nowrap;
+    padding: 42px;
+}
+
+@font-face {
+    font-family: 'lato';
+    src: url(assets/bme.ttf) format("opentype");
+  }

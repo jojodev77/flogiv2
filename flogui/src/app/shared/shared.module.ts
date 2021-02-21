@@ -20,7 +20,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatBadgeModule} from '@angular/material/badge';
 
+
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 @NgModule({
@@ -45,7 +49,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatSnackBarModule,
     MatDialogModule,
     FlexLayoutModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatPaginatorModule,
+    MatSortModule
     
   ],
   exports: [
@@ -68,7 +74,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatDialogModule,
     FlexLayoutModule,
     MatBadgeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class SharedModule { }

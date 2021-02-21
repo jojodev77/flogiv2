@@ -1,5 +1,5 @@
 .mat-toolbar.mat-primary {
-    background-color: aquamarine;
+    background-color: darkturquoise;
     color: black !important;
     min-height: 120px !important;
 }
@@ -29,13 +29,18 @@ mat-sidenav-content{
     max-width: 80px;
     margin-top: 29px;
     height: 80px;
+    padding: 8px;
   }
 
   .bordureTitle{
-    border: 3px solid greenyellow;
-    background: linear-gradient(0.25turn, #85C1E9, #AF7AC5, #F9E79F);
-    box-shadow: 7px 6px 15px greenyellow;
+  letter-spacing: 0.1em;
+  font-family: 'lato'
   }
+
+  p{
+     font-family: 'lato';
+     font-size: 34px;
+     font-weight: 900;}
 
   span{
       padding: 30px;

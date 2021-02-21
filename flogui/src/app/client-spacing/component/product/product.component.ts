@@ -24,8 +24,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   products: Products[] = [];
   dataSource = new MatTableDataSource<Products>();
   displayedColumns: string[] = ['acheter', 'image', 'type', 'prix', 'materiaux', 'information', 'stock'];
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   articleNumber: number;
   productAddToPanier = Array<Products>();
 
@@ -40,8 +40,9 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator;
+      this.paginator._intl.itemsPerPageLabel="Nbre de produits par page";
     this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
   }
 
   applyFilter(event: Event) {
@@ -58,8 +59,11 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.productService.getAllProducts().subscribe(
       (data: any) => {
         if (data) {
-          this.dataSource.data = data;
+          // this.dataSource.data = data;
+          this.dataSource = new MatTableDataSource(data);
           this.products = data;
+          this.dataSource.sort = this.sort;
+          this.dataSource.paginator = this.paginator;
         }
       }
     )
