@@ -63,3 +63,10 @@ button{
     max-width: 220px;
     padding: 20px;
 }
+
+@media screen and (max-width: 640px) {
+    th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+        border-bottom-width: 0px;
+        min-width: 54px;
+    }
+}
