@@ -9,11 +9,12 @@ import { SoldInService } from './services/sold-in.service';
 import { CgvComponent } from './component/cgv/cgv.component';
 import { MentionsComponent } from './component/mentions/mentions.component';
 import { ModalMessageComponent } from '../config/services/modal-message/modal-message.component';
+import { ProductViewComponent } from './component/product-view/product-view.component';
 
 
 
 @NgModule({
-  declarations: [ProductComponent, PanierComponent, CgvComponent, MentionsComponent],
+  declarations: [ProductComponent, PanierComponent, CgvComponent, MentionsComponent, ProductViewComponent],
   imports: [
     CommonModule,
     ClientSpacingModuleRouting,

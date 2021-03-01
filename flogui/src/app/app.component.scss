@@ -1,6 +1,6 @@
 .mat-toolbar.mat-primary {
-    background-color: darkturquoise;
-    color: black !important;
+    background-color:  #F9FBB7;
+    color: darkturquoise !important;
     min-height: 120px !important;
 }
 
@@ -26,21 +26,26 @@ mat-sidenav-content{
   }
 
   .imgFleur{
-    max-width: 80px;
-    margin-top: 29px;
-    height: 80px;
+    position: absolute;
+    height: 164px;
     padding: 8px;
+    border-radius: 56px;
+    margin-left: 265px;
+    margin-top: 38px;
+ 
   }
 
   .bordureTitle{
   letter-spacing: 0.1em;
-  font-family: 'lato'
+  font-family: 'Book Antiqua', arial;
   }
 
   p{
-     font-family: 'lato';
-     font-size: 34px;
-     font-weight: 900;}
+    font-family: "Book Antiqua", arial;
+    font-size: 38px;
+    font-weight: 900;
+    color: black;
+    letter-spacing: 0.1em;}
 
   span{
       padding: 30px;

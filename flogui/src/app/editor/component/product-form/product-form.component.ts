@@ -158,7 +158,8 @@ export class ProductFormComponent implements OnInit {
       information: this.productForm.get('information').value,
 
     } as Products;
-    this.productFormService.createProduct(newProd).subscribe(
+    let result = this.productForm.getRawValue();
+    this.productFormService.createProduct(result).subscribe(
       (data: Products[]) => {
         if (data) {
           this.products = data

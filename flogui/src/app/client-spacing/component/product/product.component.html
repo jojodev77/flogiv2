@@ -11,14 +11,14 @@
         </button>
     </p>
 
-   <button>
+   <!-- <button>
     <a HREF="mailto:flogui.boutique@orange.fr ?subject=Bijoux_sur_mesure
     &body=Bonjour je souhaiterais">
      <div> Votre produit sur-mesure</div> 
      <div> Cliquer ici</div> 
      <div><mat-icon>touch_app</mat-icon></div>
      </a>
-   </button>
+   </button> -->
 
 
 </section>
@@ -27,6 +27,18 @@
 
 
 <table mat-table pageScroll [dataSource]="dataSource" matSort >
+
+      <!-- acheter Column -->
+      <ng-container matColumnDef="view" pageScroll>
+        <th mat-header-cell *matHeaderCellDef>
+
+        </th>
+        <td mat-cell *matCellDef="let element" class="achat">
+            <button (click)="addPanier(element)">
+                <a [routerLink]="['/productView/', element.id, element]">VOIR</a>
+            </button>
+        </td>
+    </ng-container>
 
 
     <!-- acheter Column -->

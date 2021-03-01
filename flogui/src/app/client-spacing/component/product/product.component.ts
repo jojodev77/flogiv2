@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   products: Products[] = [];
   dataSource = new MatTableDataSource<Products>();
-  displayedColumns: string[] = ['acheter', 'image', 'type', 'prix', 'materiaux', 'information', 'stock'];
+  displayedColumns: string[] = ['view','acheter', 'image', 'type', 'prix', 'materiaux', 'information', 'stock'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   articleNumber: number;

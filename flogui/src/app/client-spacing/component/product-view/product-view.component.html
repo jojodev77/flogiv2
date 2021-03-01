@@ -1,0 +1,15 @@
+<section fxLayout="column" fxLayoutAlign="center center">
+    <button (click)="backToList()">
+        RETOUR
+        <mat-icon (click)="backToList()">undo</mat-icon>
+    </button>
+   
+    <img src="{{image}}">
+    <section fxLayout="row" fxLayoutAlign="space-evenly center" >
+        <h2>{{prix}}€</h2>
+        <button *ngIf="addArticle === false" (click)="addPanier(product_id)">AJOUTER AU PANIER</button>
+        <button *ngIf="addArticle === true"> ARTICLE AJOUTER</button>
+        <button *ngIf="addArticle === true" (click)="goToPanier()"> VOIR LE PANIER</button>
+    </section>
+
+</section>

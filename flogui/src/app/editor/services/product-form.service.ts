@@ -6,6 +6,13 @@ import { Products } from 'src/app/client-spacing/models/product.interface';
 import { environment } from 'src/environments/environment';
 import { catchError, map } from 'rxjs/operators';
 
+
+const optionRequete = {
+  headers: new HttpHeaders({
+    'Access-Control-Allow-Origin': 'https://www.floguiboutique.com'
+  })
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -54,7 +61,7 @@ export class ProductFormService {
           disabled: false
         },
         {
-          validators: [Validators.required],
+          validators: null,
           updateOn: 'change'
         }
       ),
@@ -64,7 +71,7 @@ export class ProductFormService {
           disabled: false
         },
         {
-          validators: [Validators.required],
+          validators: null,
           updateOn: 'change'
         }
       ),
@@ -84,7 +91,7 @@ export class ProductFormService {
           disabled: false
         },
         {
-          validators: [Validators.required],
+          validators: null,
           updateOn: 'change'
         }
       ),
@@ -94,7 +101,7 @@ export class ProductFormService {
           disabled: false
         },
         {
-          validators: [Validators.required],
+          validators: null,
           updateOn: 'change'
         }
       ),
@@ -114,7 +121,7 @@ export class ProductFormService {
           disabled: false
         },
         {
-          validators: [Validators.required],
+          validators: null,
           updateOn: 'change'
         }
       ),
@@ -134,7 +141,7 @@ export class ProductFormService {
   getAllProducts(): Observable<any> {
     const optionRequete = {
       headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': '**',
+        'Access-Control-Allow-Origin': 'https://www.floguiboutique.com',
         'Access-Control-Allow-Headers': '**',
         'Access-Control-Allow-Methods': 'POST, GET, OPTION, PUT',
         'Content-Type': 'application/json'
@@ -148,15 +155,8 @@ export class ProductFormService {
   }
 
   createProduct(data: Products): Observable<Products[]> {
-    const optionRequete = {
-      headers: new HttpHeaders({
-        'Access-Control-Allow-Origin': '**',
-        'Access-Control-Allow-Headers': '**',
-        'Access-Control-Allow-Methods': 'POST, GET, OPTION, PUT',
-        'Content-Type': 'application/json'
-      })
-    };
-    return this.httpClient.post<Products[]>(`${this.url.productUrl}/ajout`, data, {headers: optionRequete.headers})
+
+    return this.httpClient.post<Products[]>(`${this.url.productUrl}/ajout`, {data: data})
       .pipe(map((res) => {
         this.product.push(res['data']);
         return this.product;
@@ -173,7 +173,7 @@ export class ProductFormService {
         'Content-Type': 'application/json'
       })
     };
-    return this.httpClient.put<Products[]>(`${this.url}/put`, { data: product },  {headers: optionRequete.headers})
+    return this.httpClient.put<Products[]>(`${this.url.productUrl}/put`, { data: product },  {headers: optionRequete.headers})
   }
 
   deleteProduct(id: any): Observable<Products[]> {
