@@ -1,13 +1,11 @@
 .products{
     background-color:  #F9FBB7;
-    box-shadow: 7px 6px 15px greenyellow;
     min-height: 100%;
 }
 
 table {
     width: 100%;
   background-color:  #F9FBB7;
-    box-shadow: 7px 6px 15px greenyellow;
     min-height: 100%;
   }
   
@@ -76,6 +74,12 @@ img:hover {
 @media screen and (max-width: 640px) {
     th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
         border-bottom-width: 0px;
-        min-width: 54px;
+        min-width: 108px;
+        text-align: center;
+    }
+    .image{
+        margin: 20px;
+        width: 89px;
+        height: 140px;
     }
 }

@@ -1,6 +1,5 @@
 .mat-toolbar.mat-primary {
     background-color:  #F9FBB7;
-    color: darkturquoise !important;
     min-height: 120px !important;
 }
 
@@ -61,4 +60,10 @@ mat-sidenav-content{
 
   span:active{
       text-decoration: underline blue;
+  }
+
+  @media screen and (max-width: 740px) {
+    p{
+      font-size: 21px;
+    }
   }
