@@ -164,6 +164,22 @@ export class ProductFormService {
         catchError(this.handleError,));
   }
 
+  addBijoux(data: Products) {
+    this.httpClient.post<Products[]>(`${this.url.productUrl}/ajout`, data)
+    .subscribe(
+      res => {
+        console.log(res);
+       
+      },
+      err => {
+        console.log('Error occured:' , err);
+        
+
+      }
+
+    );
+  }
+
   updateProduct(product: Products[]): Observable<Products[]> {
     const optionRequete = {
       headers: new HttpHeaders({

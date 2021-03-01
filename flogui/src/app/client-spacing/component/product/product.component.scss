@@ -69,6 +69,10 @@ img:hover {
     transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
 
+  a{
+      color: white;
+  }
+
 @media screen and (max-width: 640px) {
     th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
         border-bottom-width: 0px;

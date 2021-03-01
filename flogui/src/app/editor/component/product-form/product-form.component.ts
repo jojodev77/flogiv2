@@ -159,14 +159,7 @@ export class ProductFormComponent implements OnInit {
 
     } as Products;
     let result = this.productForm.getRawValue();
-    this.productFormService.createProduct(result).subscribe(
-      (data: Products[]) => {
-        if (data) {
-          this.products = data
-        }
-
-      }
-    );
+    this.productFormService.addBijoux(result);
     this._initDataOfProduct();
   }
 

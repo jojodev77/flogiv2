@@ -34,8 +34,8 @@
 
         </th>
         <td mat-cell *matCellDef="let element" class="achat">
-            <button (click)="addPanier(element)">
-                <a [routerLink]="['/productView/', element.id, element]">VOIR</a>
+            <button>
+                <a [routerLink]="['/productView/', element.id, element]">VOIR <mat-icon>zoom_in</mat-icon></a>
             </button>
         </td>
     </ng-container>

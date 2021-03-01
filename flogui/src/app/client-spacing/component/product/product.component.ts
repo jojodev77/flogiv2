@@ -71,14 +71,17 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   addPanier(product: Products) {
     this.soldinService.updateProductNumber(product);
-      this.onModalMessage('Article ajoutés:', product.id);
+      this.onModalMessage('Article ajoutés:', '');
       this.calculToQuantityOfPanier();
   }
 
   calculToQuantityOfPanier(){
     this.soldinService.productSubject.subscribe(
       data => { this.products = data; 
-        this.articleNumber = this.products.length;
+        if (this.products) {
+          this.articleNumber = this.products.length;
+        }
+        
       }
     );
   }
